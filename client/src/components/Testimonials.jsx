@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import testimonial1 from '../assets/testimonial-1.png'
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import starIcon from '../assets/star-icon.png'
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([
@@ -64,12 +65,12 @@ const Testimonials = () => {
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20 max-w-5xl mx-auto">
-          
+
           <div className="w-full md:w-5/12">
             <div className="rounded-[16px] overflow-hidden shadow-md h-[350px] md:h-[450px]">
-              <img 
-                src={current.image && current.image.startsWith('/') ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${current.image}` : (current.image || 'https://via.placeholder.com/450')} 
-                alt={current.name} 
+              <img
+                src={current.image && current.image.startsWith('/') ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${current.image}` : (current.image || 'https://via.placeholder.com/450')}
+                alt={current.name}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -78,36 +79,75 @@ const Testimonials = () => {
           <div className="w-full md:w-7/12 relative">
             <div className="flex flex-col justify-center relative py-4 lg:pl-4">
               <div>
-                <h3 className="text-[20px] font-medium text-gray-900 mb-2">{current.name}</h3>
-                <p className="text-gray-500 text-[14px] mb-5 font-normal">{current.location}</p>
-                
-                <div className="flex gap-[2px] mb-5">
-                  {[...Array(current.rating)].map((_, i) => (
-                    <Star key={i} className="w-[18px] h-[18px] fill-[#1a1a1a] text-[#1a1a1a]" />
+                <h3
+                  className="text-gray-900 mb-1"
+                  style={{
+                    fontFamily: "'Atyp Display TRIAL', sans-serif",
+                    fontWeight: 500,
+                    fontStyle: 'normal',
+                    fontSize: '24px',
+                    lineHeight: '120%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  {current.name}
+                </h3>
+                <p
+                  className="text-gray-500 mb-4"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 500,
+                    fontStyle: 'normal',
+                    fontSize: '16px',
+                    lineHeight: '100%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  {current.location}
+                </p>
+
+                <div className="flex gap-1.5 mb-5">
+                  {[...Array(current.rating || 5)].map((_, i) => (
+                    <img key={i} src={starIcon} alt="star" className="w-[18px] h-[18px] object-contain" />
                   ))}
                 </div>
 
-                <p className="text-gray-700 text-[14px] leading-[1.8] mb-8 font-medium">
+                <p
+                  className="text-gray-600 mb-6"
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: 'normal',
+                    fontSize: '15px',
+                    lineHeight: '160%',
+                    letterSpacing: '0%'
+                  }}
+                >
                   {current.content}
                 </p>
 
-                <div className="flex justify-between items-end mt-10">
-                  <div className="text-[38px] text-gray-400 opacity-70" style={{fontFamily: "'Dancing Script', 'Brush Script MT', cursive", fontStyle: "italic"}}>
+                <div className="flex justify-between items-center mt-6">
+                  <div
+                    className="text-[32px] text-gray-500 font-normal leading-none"
+                    style={{
+                      fontFamily: "'Great Vibes', 'Alex Brush', 'Dancing Script', cursive",
+                    }}
+                  >
                     {current.signature}
                   </div>
-                  
-                  <div className="flex gap-4">
-                    <button 
+
+                  <div className="flex gap-2">
+                    <button
                       onClick={prev}
-                      className="w-[42px] h-[42px] rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors text-gray-600"
+                      className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition-colors text-gray-800"
                     >
-                      <ChevronLeft className="w-5 h-5" />
+                      <ChevronLeft className="w-4 h-4" />
                     </button>
-                    <button 
+                    <button
                       onClick={next}
-                      className="w-[42px] h-[42px] rounded-full bg-[#1a1a1a] text-white flex items-center justify-center hover:bg-black transition-colors shadow-md"
+                      className="w-10 h-10 rounded-full bg-[#1a1a1a] text-white flex items-center justify-center hover:bg-black transition-colors shadow-md"
                     >
-                      <ChevronRight className="w-5 h-5" />
+                      <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
                 </div>

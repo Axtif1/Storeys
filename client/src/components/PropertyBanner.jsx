@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight } from 'lucide-react'
+import listPropertyBg from '../assets/list-property-bg.png'
 
 const PropertyBanner = () => {
   return (
@@ -7,21 +8,52 @@ const PropertyBanner = () => {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: `url(${listPropertyBg})`,
         }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-[42px] font-semibold text-white mb-4 tracking-tight">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h2 
+          className="text-white mb-4"
+          style={{
+            fontFamily: "'Atyp Display TRIAL', sans-serif",
+            fontWeight: 500,
+            fontStyle: 'normal',
+            fontSize: '60px',
+            lineHeight: '100%',
+            letterSpacing: '0%'
+          }}
+        >
           List your property
         </h2>
-        <p className="text-[15px] text-gray-100 mb-8 max-w-xl mx-auto font-medium">
-          Take your property 'Exclusive' with Storeys and enjoy all the exclusive benefits.
+        <p 
+          className="text-white mb-8 max-w-2xl mx-auto"
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 500,
+            fontStyle: 'normal',
+            fontSize: '18px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            textAlign: 'center'
+          }}
+        >
+          Take your property ‘Exclusive’ with Storeys and enjoy all the exclusive benefits.
         </p>
-        <button className="bg-white text-gray-900 px-6 py-2.5 rounded-full text-[13px] font-semibold flex items-center gap-2 mx-auto hover:bg-gray-100 transition-colors shadow-lg">
-          Book a Valuation <ArrowRight className="w-3.5 h-3.5" />
+        <button 
+          className="bg-white text-gray-900 px-8 py-3.5 rounded-full flex items-center gap-2 mx-auto hover:bg-gray-100 transition-colors shadow-lg"
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 600,
+            fontStyle: 'normal',
+            fontSize: '16px',
+            lineHeight: '100%',
+            letterSpacing: '0%'
+          }}
+        >
+          Book a Valuation <ArrowRight className="w-4 h-4" />
         </button>
       </div>
     </section>

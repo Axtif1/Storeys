@@ -1,10 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --color-brand-light: #f5f5f5;
   --color-brand-dark: #1a1a1a;
   --color-brand-blue: #3b82f6;
+}
+
+@font-face {
+  font-family: 'Atyp Display TRIAL Light';
+  src: url('/fonts/Atyp Display TRIAL Light.woff2') format('woff2'),
+       url('/fonts/Atyp Display TRIAL Light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 @keyframes developer-marquee {

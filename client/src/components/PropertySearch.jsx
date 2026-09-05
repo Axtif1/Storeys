@@ -16,6 +16,9 @@ const PropertySearch = () => {
   const typeOptions = ['Apartment', 'Villa', 'Townhouse', 'Penthouse']
   const priceOptions = ['Under 1M AED', '1M - 3M AED', '3M - 5M AED', '5M+ AED']
 
+  const labelStyle = { fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: '18px', lineHeight: '100%', letterSpacing: '0%' }
+  const valueStyle = { fontFamily: "'DM Sans', sans-serif", fontWeight: 400, fontSize: '16px', lineHeight: '100%', letterSpacing: '0%' }
+
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -33,7 +36,7 @@ const PropertySearch = () => {
   }
 
   return (
-    <div className="absolute bottom-8 md:bottom-12 left-0 right-0 w-full max-w-[1100px] mx-auto z-20 px-4">
+    <div className="absolute bottom-8 md:bottom-12 left-0 right-0 w-full max-w-[1200px] mx-auto z-20 px-4">
       <div
         ref={dropdownRef}
         className="bg-white shadow-[0_20px_40px_rgb(0,0,0,0.12)] p-2 md:p-3 flex flex-col md:flex-row items-center justify-between rounded-[20px] md:rounded-[10px] relative"
@@ -41,24 +44,25 @@ const PropertySearch = () => {
 
         {/* Location */}
         <div className="flex-1 w-full md:border-r border-gray-200 px-6 py-2">
-          <label className="block text-[14px] font-semibold text-gray-900 mb-1">Location</label>
+          <label className="block text-gray-900 mb-1" style={labelStyle}>Location</label>
           <input
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             placeholder="City, Community or Area"
-            className="w-full bg-transparent text-gray-900 text-[13px] focus:outline-none placeholder-gray-500 font-medium"
+            className="w-full bg-transparent text-gray-900 focus:outline-none placeholder-gray-500"
+            style={valueStyle}
           />
         </div>
 
         {/* Bedrooms Dropdown */}
         <div className="flex-1 w-full md:border-r border-gray-200 px-6 py-2 relative">
-          <label className="block text-[14px] font-semibold text-gray-900 mb-1">Bedrooms</label>
+          <label className="block text-gray-900 mb-1" style={labelStyle}>Bedrooms</label>
           <div
             className="flex items-center justify-between cursor-pointer"
             onClick={() => setActiveDropdown(activeDropdown === 'bedrooms' ? null : 'bedrooms')}
           >
-            <span className={`text-[13px] font-medium ${bedrooms ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span className={bedrooms ? 'text-gray-900' : 'text-gray-500'} style={valueStyle}>
               {bedrooms || 'Select Bedrooms'}
             </span>
             <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${activeDropdown === 'bedrooms' ? 'rotate-180' : ''}`} />
@@ -68,14 +72,16 @@ const PropertySearch = () => {
               {bedroomOptions.map((opt) => (
                 <div
                   key={opt}
-                  className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-gray-700"
+                  className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-gray-700"
+                  style={valueStyle}
                   onClick={() => { setBedrooms(opt); setActiveDropdown(null) }}
                 >
                   {opt}
                 </div>
               ))}
               <div
-                className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-red-500 font-medium border-t border-gray-100 mt-1"
+                className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-red-500 border-t border-gray-100 mt-1"
+                style={{ ...valueStyle, fontWeight: 500 }}
                 onClick={() => { setBedrooms(''); setActiveDropdown(null) }}
               >
                 Clear
@@ -86,12 +92,12 @@ const PropertySearch = () => {
 
         {/* Types Dropdown */}
         <div className="flex-1 w-full md:border-r border-gray-200 px-6 py-2 relative">
-          <label className="block text-[14px] font-semibold text-gray-900 mb-1">Types</label>
+          <label className="block text-gray-900 mb-1" style={labelStyle}>Types</label>
           <div
             className="flex items-center justify-between cursor-pointer"
             onClick={() => setActiveDropdown(activeDropdown === 'types' ? null : 'types')}
           >
-            <span className={`text-[13px] font-medium ${type ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span className={type ? 'text-gray-900' : 'text-gray-500'} style={valueStyle}>
               {type || 'Select Types'}
             </span>
             <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${activeDropdown === 'types' ? 'rotate-180' : ''}`} />
@@ -101,14 +107,16 @@ const PropertySearch = () => {
               {typeOptions.map((opt) => (
                 <div
                   key={opt}
-                  className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-gray-700"
+                  className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-gray-700"
+                  style={valueStyle}
                   onClick={() => { setType(opt); setActiveDropdown(null) }}
                 >
                   {opt}
                 </div>
               ))}
               <div
-                className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-red-500 font-medium border-t border-gray-100 mt-1"
+                className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-red-500 border-t border-gray-100 mt-1"
+                style={{ ...valueStyle, fontWeight: 500 }}
                 onClick={() => { setType(''); setActiveDropdown(null) }}
               >
                 Clear
@@ -119,12 +127,12 @@ const PropertySearch = () => {
 
         {/* Price Range Dropdown */}
         <div className="flex-1 w-full px-6 py-2 relative">
-          <label className="block text-[14px] font-semibold text-gray-900 mb-1">Price Range</label>
+          <label className="block text-gray-900 mb-1" style={labelStyle}>Price Range</label>
           <div
-            className="flex items-center justify-between cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer"
             onClick={() => setActiveDropdown(activeDropdown === 'price' ? null : 'price')}
           >
-            <span className={`text-[13px] font-medium ${priceRange ? 'text-gray-900' : 'text-gray-500'}`}>
+            <span className={priceRange ? 'text-gray-900' : 'text-gray-500'} style={valueStyle}>
               {priceRange || 'Min. price - Max. price'}
             </span>
             <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform ${activeDropdown === 'price' ? 'rotate-180' : ''}`} />
@@ -134,14 +142,16 @@ const PropertySearch = () => {
               {priceOptions.map((opt) => (
                 <div
                   key={opt}
-                  className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-gray-700"
+                  className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-gray-700"
+                  style={valueStyle}
                   onClick={() => { setPriceRange(opt); setActiveDropdown(null) }}
                 >
                   {opt}
                 </div>
               ))}
               <div
-                className="px-6 py-2 hover:bg-gray-50 text-[13px] cursor-pointer text-red-500 font-medium border-t border-gray-100 mt-1"
+                className="px-6 py-2 hover:bg-gray-50 cursor-pointer text-red-500 border-t border-gray-100 mt-1"
+                style={{ ...valueStyle, fontWeight: 500 }}
                 onClick={() => { setPriceRange(''); setActiveDropdown(null) }}
               >
                 Clear
@@ -154,7 +164,8 @@ const PropertySearch = () => {
         <div className="px-2 w-full md:w-auto mt-4 md:mt-0">
           <button
             onClick={handleSearch}
-            className="w-full md:w-auto bg-[#1e1e1e] hover:bg-black text-white px-8 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg font-medium text-[14px]"
+            className="w-full md:w-auto bg-[#1e1e1e] hover:bg-black text-white px-8 py-3.5 rounded-full flex items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500, fontSize: '16px' }}
           >
             Search
           </button>

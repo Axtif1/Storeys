@@ -8,16 +8,46 @@ const AboutStoreys = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         
         <div className="space-y-8 pr-4">
-          <div>
-            <h3 className="text-gray-900 font-bold text-[15px] mb-3">About Storeys</h3>
-            <h2 className="text-3xl md:text-[40px] font-semibold text-gray-900 leading-[1.15]">
-              The Brightest And Fastest-Growing Real Estate Brokerage Firm in Dubai
+          <div className="max-w-[538px]">
+            <h3 
+              className="text-[#1A1A1A] mb-4"
+              style={{
+                fontFamily: "'Atyp Display TRIAL', sans-serif",
+                fontWeight: 500,
+                fontStyle: 'normal',
+                fontSize: '25px',
+                lineHeight: '100%',
+                letterSpacing: '0%'
+              }}
+            >
+              About Storeys
+            </h3>
+            <h2 
+              className="text-[#1A1A1A] mb-5 max-w-[460px]"
+              style={{
+                fontFamily: "'Atyp Display TRIAL', sans-serif",
+                fontWeight: 500,
+                fontStyle: 'normal',
+                fontSize: '18px',
+                lineHeight: '120%',
+                letterSpacing: '0%'
+              }}
+            >
+              The Brightest And Fastest-Growing Real Estate<br />Brokerage Firm in Dubai
             </h2>
+            <p 
+              className="text-[#555555] max-w-[510px]"
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 400,
+                fontSize: '15px',
+                lineHeight: '150%',
+                letterSpacing: '0%'
+              }}
+            >
+              At Storeys, we specialize in Sales and Leasing, excelling in the<br />Off-Plan Sector with a team boasting 20+ years of combined<br />experience. Our Hybrid Approach allows us to evolve, learn, and<br />adapt to the ever-changing market.
+            </p>
           </div>
-          
-          <p className="text-gray-500 text-[15px] leading-relaxed max-w-lg font-medium">
-            At Storeys, we specialize in Sales and Leasing, excelling in the Off-Plan Sector with a team boasting 20+ years of combined experience. Our Hybrid Approach allows us to evolve, learn, and adapt to the ever-changing market.
-          </p>
 
           <div className="flex items-center gap-4 py-2">
             <div className="flex -space-x-3">
@@ -32,23 +62,83 @@ const AboutStoreys = () => {
             </p>
           </div>
 
-          <div className="space-y-6 pt-4">
-            <div className="flex items-center gap-6 border-b border-gray-200/60 pb-6">
-              <span className="text-[56px] font-semibold text-gray-900 w-[110px] tracking-tight">20+</span>
-              <p className="text-gray-900 font-bold text-[14px] leading-snug">
+          <div className="space-y-6 pt-4 max-w-[480px]">
+            <div className="flex items-center gap-6 border-b border-gray-100 pb-6">
+              <span 
+                className="text-[#1A1A1A] w-[180px] shrink-0"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '70.95px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
+              >
+                20+
+              </span>
+              <p 
+                className="text-[#1A1A1A]"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '20px',
+                  lineHeight: '125%',
+                  letterSpacing: '0%'
+                }}
+              >
                 years of combined<br/>experience.
               </p>
             </div>
-            <div className="flex items-center gap-6 border-b border-gray-200/60 pb-6">
-              <span className="text-[56px] font-semibold text-gray-900 w-[110px] tracking-tight">93%</span>
-              <p className="text-gray-900 font-bold text-[14px] leading-snug">
+            <div className="flex items-center gap-6 border-b border-gray-100 pb-6">
+              <span 
+                className="text-[#1A1A1A] w-[180px] shrink-0"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '70.95px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
+              >
+                93%
+              </span>
+              <p 
+                className="text-[#1A1A1A]"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '18px',
+                  lineHeight: '125%',
+                  letterSpacing: '0%'
+                }}
+              >
                 Unmatched expertise in<br/>Off-Plan investments
               </p>
             </div>
             <div className="flex items-center gap-6 pb-2">
-              <span className="text-[56px] font-semibold text-gray-900 w-[110px] tracking-tight">23</span>
-              <p className="text-gray-900 font-bold text-[14px] leading-snug">
-                Comprehensive solutions for<br/>investors & property owners
+              <span 
+                className="text-[#1A1A1A] w-[180px] shrink-0"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '70.95px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
+              >
+                23
+              </span>
+              <p 
+                className="text-[#1A1A1A]"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  fontSize: '18px',
+                  lineHeight: '125%',
+                  letterSpacing: '0%'
+                }}
+              >
+                Comprehensive solutions for investors & property owners
               </p>
             </div>
           </div>

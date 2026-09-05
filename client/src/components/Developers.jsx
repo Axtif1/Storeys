@@ -33,22 +33,32 @@ const Developers = () => {
   return (
     <div className="w-full bg-white pt-32 pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-        <h2 className="text-3xl md:text-[38px] font-medium text-[#1a1a1a]">
+        <h2 
+          className="max-w-[444px] mx-auto text-[#1a1a1a]" 
+          style={{ 
+            fontFamily: "'Atyp Display TRIAL Light', sans-serif",
+            fontWeight: 600,
+            fontStyle: 'normal',
+            fontSize: '42px',
+            lineHeight: '100%',
+            letterSpacing: '0%'
+          }}
+        >
           Our Developers
         </h2>
       </div>
-      
-      <div className="w-full overflow-hidden relative space-y-4 md:space-y-6">
+
+      <div className="w-full relative space-y-4 md:space-y-6 py-4">
         {/* Row 1 */}
-        <div className="flex w-max animate-marquee gap-4 md:gap-6 px-4">
+        <div className="flex w-max animate-marquee gap-4 md:gap-6 px-4 py-2">
           {row1Repeated.map((dev, index) => (
-            <div 
-              key={`row1-${dev.id}-${index}`} 
-              className="bg-white border border-gray-50 shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl p-6 flex items-center justify-center w-[180px] h-[90px] md:w-[220px] md:h-[100px] flex-shrink-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+            <div
+              key={`row1-${dev.id}-${index}`}
+              className="bg-white border border-gray-100 shadow-[0_8px_25px_rgba(0,0,0,0.08)] rounded-2xl p-6 flex items-center justify-center w-[180px] h-[90px] md:w-[220px] md:h-[100px] flex-shrink-0 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.15)]"
             >
-              <img 
-                src={dev.logo.startsWith('/') ? `${api}${dev.logo}` : dev.logo} 
-                alt={dev.name} 
+              <img
+                src={dev.logo.startsWith('/') ? `${api}${dev.logo}` : dev.logo}
+                alt={dev.name}
                 className="max-w-[130px] max-h-[45px] object-contain"
               />
             </div>
@@ -56,15 +66,15 @@ const Developers = () => {
         </div>
 
         {/* Row 2 */}
-        <div className="flex w-max animate-marquee-reverse gap-4 md:gap-6 px-4">
+        <div className="flex w-max animate-marquee-reverse gap-4 md:gap-6 px-4 py-2">
           {row2Repeated.map((dev, index) => (
-            <div 
-              key={`row2-${dev.id}-${index}`} 
-              className="bg-white border border-gray-50 shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl p-6 flex items-center justify-center w-[180px] h-[90px] md:w-[220px] md:h-[100px] flex-shrink-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+            <div
+              key={`row2-${dev.id}-${index}`}
+              className="bg-white border border-gray-100 shadow-[0_8px_25px_rgba(0,0,0,0.08)] rounded-2xl p-6 flex items-center justify-center w-[180px] h-[90px] md:w-[220px] md:h-[100px] flex-shrink-0 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_35px_rgba(0,0,0,0.15)]"
             >
-              <img 
-                src={dev.logo.startsWith('/') ? `${api}${dev.logo}` : dev.logo} 
-                alt={dev.name} 
+              <img
+                src={dev.logo.startsWith('/') ? `${api}${dev.logo}` : dev.logo}
+                alt={dev.name}
                 className="max-w-[130px] max-h-[45px] object-contain"
               />
             </div>
