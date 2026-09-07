@@ -13,11 +13,12 @@ dist
 dist-ssr
 *.local
 
-# Environment variables
+# Environment variables & Deployment docs
 .env
 .env.local
 .env.*.local
-.env.examples
+*.env.example
+DEPLOYMENT.md
 
 # Server uploads
 server/uploads/*
