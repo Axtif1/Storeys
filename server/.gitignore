@@ -17,8 +17,8 @@ dist-ssr
 .env
 .env.local
 .env.*.local
-.env.examples
-
+DEPLOYMENT.md
+.env.example
 
 # Server uploads
 server/uploads/*
